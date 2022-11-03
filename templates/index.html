@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie App</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <center>
+
+        <form method="post">
+            <h2>Search Movie </h2> 
+            <input type="text" name="mname">
+        </form> 
+
+        {% if validation == True %}
+            <p>Type movie name to search for ...</p>
+        {% else %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{data['Poster']}}" class="card-img-top" alt="loading...">
+            <div class="card-body">
+              <h5 class="card-title">{{data['Title']}}</h5>
+              <p class="card-text">{{data['Genre']}}</p>
+            </div>
+            <!-- <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div> -->
+          </div>
+        {% endif %}
+
+    </center>
+
+    </body>
+</html>
